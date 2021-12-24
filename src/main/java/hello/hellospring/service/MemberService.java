@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+
 public class MemberService { // 테스트 코드 작성 단축키 : ctrl + shift + t
 
-    @Autowired  //MemberService가 생성될 때 스프링 컨테이너에 있는 memberRepository를 가져와서 넣어준다.
+    //MemberService가 생성될 때 스프링 컨테이너에 있는 memberRepository를 가져와서 넣어준다.
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -46,7 +46,6 @@ public class MemberService { // 테스트 코드 작성 단축키 : ctrl + shift
         memberRepository.save(member);
         return member.getId();
     }
-
 
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
