@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest //스프링 컨테이너와 테스트를 함께 실행한다.
 @Transactional    //테스트를 시작 전, 트랜잭션을 실행하고, 테스트가 끝나면 rollback 시킨다. 각각의 테스트마다 적용. 테스트클래스에서만 롤백이 적용됨.
-class MemberServiceIntegrationTest {
+class MemberServiceIntegrationTest { //통합테스트
     //컨테이너 없이 순수 자바코드로 작성한 단위테스트로 테스트하는 것이 훨씬 좋은 방법이다.
     //컨테이너 띄우고 하는 테스트는 일반적으로 통합테스트라 부른다.
 

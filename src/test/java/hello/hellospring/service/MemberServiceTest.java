@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class MemberServiceTest {
+class MemberServiceTest { //단위 테스트
 
     /*새로 선언하였으므로, MemberService에서 선언한 MemoryMemberRepository와
     MemberServiceTest에서 쓰는 MemoryMemberRepository가 서로 다른 객체인 상태.*/
