@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -24,6 +25,7 @@ class MemberServiceIntegrationTest { //통합테스트
     @Autowired MemberRepository memberRepository; //SpringConfig에서 정의한 구현체가 호출된다.
 
     @Test
+//    @Commit   // db에 Commit 해라는 어노테이션. @Transactional이 있어도 @Commit 어노테이션이 있으면 바로 db에 commit 한다.
     void 회원가입() {
         //given
         Member member = new Member();
@@ -31,6 +33,9 @@ class MemberServiceIntegrationTest { //통합테스트
 
         //when
         Long saveId = memberService.join(member);
+
+//        Hibernate: select member0_.id as id1_0_, member0_.name as name2_0_ from member member0_ where member0_.name=?
+//        Hibernate: insert into member (id, name) values (null, ?)
 
         //then
         Member findMember = memberService.findOne(saveId).get();

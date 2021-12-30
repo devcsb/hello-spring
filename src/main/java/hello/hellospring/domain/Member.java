@@ -12,7 +12,7 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(name = "username") // 만약 db의 컬럼명이 username이라면 이렇게 어노테이션을 달아준다.
+//    @Column(name = "username") // 만약 db의 컬럼명이 name이 아니라 username이라면 이렇게 어노테이션을 달아준다.
     private String name;
 
     public Long getId() {
